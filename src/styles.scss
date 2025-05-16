@@ -1,1 +1,28 @@
-/* You can add global styles to this file, and also import other style files */
+* {
+  font-family: sans-serif;
+  -webkit-user-select: none;
+  user-select: none;
+}
+
+html,
+body {
+  height: 100%;
+  margin: 0;
+  padding: 0;
+  font-family: "Bebas Neue", sans-serif;
+  background: linear-gradient(to bottom right, #1a0000, #000000);
+  background-attachment: fixed;
+  background-size: cover;
+  color: #f9f9f9;
+}
+
+body,
+app-root {
+  display: flex;
+  flex-direction: column;
+  min-height: 100vh;
+}
+
+app-root {
+  flex: 1;
+}

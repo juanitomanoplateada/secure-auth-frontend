@@ -1,0 +1,141 @@
+html,
+body {
+  height: 100%;
+  margin: 0;
+  padding: 0;
+  font-family: "Bebas Neue", sans-serif;
+  background: linear-gradient(to bottom right, #1a0000, #000000);
+  background-attachment: fixed;
+  color: #f9f9f9;
+  overflow: hidden;
+}
+
+.login-container {
+  max-width: 675px;
+  margin: 100px auto;
+  padding: 40px;
+  background: #121212;
+  border: 1px solid #a30000;
+  border-radius: 16px;
+  box-shadow: 0 0 15px rgba(166, 0, 0, 0.6);
+  z-index: 1;
+  position: relative;
+  animation: fadeIn 0.8s ease-out;
+}
+
+.title {
+  text-align: center;
+  font-size: 36px;
+  color: #e60000;
+  text-shadow: 0 0 0px #ff0000, 0 0 0px #aa0000;
+  margin-bottom: 25px;
+
+  span {
+    color: #fff;
+    text-shadow: none;
+  }
+}
+
+label {
+  display: block;
+  margin-bottom: 5px;
+  color: #ffcccc;
+  font-size: 16px;
+  letter-spacing: 1px;
+}
+
+input {
+  width: 100%;
+  padding: 12px;
+  background: #1f1f1f;
+  border: 1px solid #a30000;
+  color: #f9f9f9;
+  border-radius: 8px;
+  margin-bottom: 18px;
+  font-size: 15px;
+  transition: all 0.3s ease;
+}
+
+input::placeholder {
+  color: #bbbbbb;
+}
+
+input:focus {
+  border-color: #e60000;
+  background: #292929;
+  outline: none;
+}
+
+.button-group {
+  display: flex;
+  justify-content: space-between;
+  gap: 15px;
+}
+
+button {
+  flex: 1;
+  padding: 12px;
+  font-size: 15px;
+  font-weight: bold;
+  color: white;
+  border: none;
+  border-radius: 10px;
+  cursor: pointer;
+  transition: all 0.3s ease;
+}
+
+// 🟥 Botón LOGIN (rojo intenso)
+button[type="submit"] {
+  background: linear-gradient(to right, #a30000, #e60000);
+  box-shadow: 0 0 8px #a30000;
+}
+
+button[type="submit"]:hover {
+  background: linear-gradient(to right, #c00000, #ff1a1a);
+}
+
+// 🧱 Botón REGISTRARSE (oscuro con borde rojo)
+button[type="button"] {
+  background: transparent;
+  border: 2px solid #e60000;
+  color: #e60000;
+}
+
+button[type="button"]:hover {
+  background: #1a0000;
+  color: #ff1a1a;
+}
+
+// ✅ Feedback visual
+.feedback {
+  margin-top: 20px;
+  padding: 12px;
+  border-radius: 8px;
+  text-align: center;
+  font-size: 14px;
+  font-weight: bold;
+  border-left: 4px solid transparent;
+}
+
+.feedback.success {
+  background-color: #d4edda;
+  color: #155724;
+  border-left-color: #28a745;
+}
+
+.feedback.error {
+  background-color: #f8d7da;
+  color: #721c24;
+  border-left-color: #dc3545;
+}
+
+@keyframes fadeIn {
+  from {
+    opacity: 0;
+    transform: translateY(-20px);
+  }
+  to {
+    opacity: 1;
+    transform: translateY(0);
+  }
+}

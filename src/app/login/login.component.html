@@ -1,0 +1,38 @@
+<div class="login-container">
+  <h2 class="title">Bienvenido a <span>SecureAuth</span></h2>
+
+  <form [formGroup]="loginForm" (ngSubmit)="onSubmit()">
+    <label for="username">Usuario</label>
+    <input
+      id="username"
+      formControlName="username"
+      type="text"
+      placeholder="Ingresa tu nombre de usuario"
+      title="Ingresa tu nombre de usuario"
+    />
+
+    <label for="password">Contraseña</label>
+    <input
+      id="password"
+      formControlName="password"
+      type="password"
+      placeholder="Ingresa tu contraseña"
+      title="Ingresa tu contraseña segura"
+    />
+
+    <div class="button-group">
+      <button type="submit" [disabled]="loginForm.invalid">
+        Iniciar Sesión
+      </button>
+      <button type="button" (click)="onRegister()">Registrarse</button>
+    </div>
+  </form>
+
+  <div
+    class="feedback"
+    [class.error]="errorMessage"
+    [class.success]="successMessage"
+  >
+    {{ errorMessage || successMessage }}
+  </div>
+</div>
