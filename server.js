@@ -4,7 +4,7 @@ const path = require("path");
 const app = express();
 const port = process.env.PORT || 8080;
 
-// 🚨 SERVIR DESDE LA RUTA CORRECTA
+// 👇 Ruta del build
 const angularDistPath = path.join(
   __dirname,
   "dist",
@@ -14,7 +14,6 @@ const angularDistPath = path.join(
 
 app.use(express.static(angularDistPath));
 
-// Redirige cualquier ruta que no sea archivo directamente a Angular (SPA fallback)
 app.get("*", (req, res) => {
   res.sendFile(path.join(angularDistPath, "index.html"));
 });
