@@ -21,10 +21,13 @@
     />
 
     <div class="button-group">
-      <button type="submit" [disabled]="loginForm.invalid">
-        Iniciar Sesión
+      <button type="submit" [disabled]="loginForm.invalid || isLoading">
+        {{ isLoading ? "Cargando..." : "Iniciar Sesión" }}
       </button>
-      <button type="button" (click)="onRegister()">Registrarse</button>
+
+      <button type="button" (click)="onRegister()" [disabled]="isLoading">
+        {{ isLoading ? "Cargando..." : "Registrarse" }}
+      </button>
     </div>
   </form>
 
